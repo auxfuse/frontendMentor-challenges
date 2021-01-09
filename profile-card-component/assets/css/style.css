@@ -1,0 +1,137 @@
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 18px;
+}
+
+/* Variables */
+:root {
+    /* Color Scheme */
+    --color-p1: hsl(185, 75%, 39%);
+    --color-p2: hsl(229, 23%, 23%);
+    --color-p3: hsl(227, 10%, 46%);
+    --color-s1: hsl(0, 0%, 59%);
+    --color-s2: hsl(0, 7%, 92%);
+
+    /* Typography */
+    --font-fam: 'Kumbh Sans', sans-serif;
+
+    /* Measurements */
+    --grid-w: 112.5rem;
+    --gutter-h-sm: 4rem;
+    --gutter-h-med: 6rem;
+}
+
+/* Utilities */
+.u-bold {
+    font-weight: 700;
+}
+
+.u-sm-text {
+    font-size: 0.8rem;
+}
+
+/* Global */
+body {
+    background: url("../images/bg-pattern-top.svg") top -50vh left 5vh no-repeat, url("../images/bg-pattern-bottom.svg") bottom -60vh right 10vh no-repeat;
+    background-color: var(--color-p1);
+    font-family: var(--font-fam);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main */
+.card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 250px 1fr auto;
+    border-radius: 3%;
+    overflow: hidden;
+    background-color: var(--color-s2);
+    color: var(--color-p2);
+    margin: 3rem;
+    width: 400px;
+}
+
+.card-top {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    position: relative;
+}
+
+#card-top__img {
+    width: 100%;
+}
+
+.card-top__avatar {
+    background: url("../images/image-victor.jpg") center center no-repeat;
+    background-size: cover;
+    border: 5px solid var(--color-s2);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+}
+
+.card-body {
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+    align-content: center;
+    justify-content: center;
+}
+
+.card-body__desc {
+    text-align: center;
+}
+
+.card-body__desc p {
+    margin: 0.5rem 0;
+}
+
+[class^='card-stats__'] {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+[class^='card-stats__']::before {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: var(--color-s1);
+    opacity: 30%;
+    margin: 0 0 2rem;
+}
+
+[class^='card-stats__'] p {
+    margin: 0.5rem 0;
+}
+
+.card-stats__left {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+
+.card-stats__mid {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+}
+
+.card-stats__right {
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+}
