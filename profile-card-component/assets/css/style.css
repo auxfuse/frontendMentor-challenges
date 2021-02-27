@@ -41,7 +41,6 @@ html {
 
 /* Global */
 body {
-    background: url("../images/bg-pattern-top.svg") top -50vh left 5vh no-repeat, url("../images/bg-pattern-bottom.svg") bottom -60vh right 10vh no-repeat;
     background-color: var(--color-p1);
     font-family: var(--font-fam);
     height: 100vh;
@@ -52,6 +51,12 @@ body {
 }
 
 /* Main */
+.content {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
 .card {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -60,8 +65,8 @@ body {
     overflow: hidden;
     background-color: var(--color-s2);
     color: var(--color-p2);
-    margin: 3rem;
-    width: 400px;
+    margin: 2rem 0;
+    min-width: 400px;
 }
 
 .card-top {
@@ -134,4 +139,33 @@ body {
 .card-stats__right {
     grid-column: 3 / 4;
     grid-row: 3 / 4;
+}
+
+footer {
+    margin-bottom: 2rem;
+}
+
+.home-link {
+    position: relative;
+    text-decoration: none;
+    color: var(--color-p2);
+}
+
+.home-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-p2);
+    bottom: -3px;
+    left: 0;
+    transition: transform 0.4s ease 0s;
+}
+
+.home-link:hover {
+    color: var(--color-s2);
+}
+
+.home-link:hover::after {
+    transform: scaleX(0);
 }
