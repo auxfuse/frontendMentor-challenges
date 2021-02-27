@@ -17,7 +17,19 @@ body {
 }
 
 h1 {
-    font-style: italic;
     color: #131212;
+    margin: 1rem;
+}
+
+h1::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 80%;
+    background-color: #131212;
+    margin: 0.5rem auto;
+}
+
+a:not(:last-child) {
     margin: 1rem;
 }
